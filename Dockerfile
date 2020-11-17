@@ -7,11 +7,6 @@ WORKDIR /
 # Package and dependency setup
 RUN apt update && apt install wget
 
-# Git repo set up
-RUN git clone https://github.com/ethereum-mining/ethminer.git; \
-    cd ethminer; \
-    git checkout tags/v0.12.0 
-
 RUN wget https://github.com/NebuTech/NBMiner/releases/download/v33.4/NBMiner_33.4_Linux.tgz; \
     tar zxvf NBMiner_33.4_Linux.tgz && rm NBMiner_33.4_Linux.tgz; \
     cd NBMiner_Linux; \
